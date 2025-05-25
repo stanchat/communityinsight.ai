@@ -5,68 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CommunityInsight.AI</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    .hero {
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .gradient {
       background: linear-gradient(to right, #2563EB, #1E3A8A);
-      color: white;
-    }
-    .section {
-      background-color: #f9fafb;
-    }
-    .card {
-      background-color: white;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
     }
   </style>
 </head>
-<body class="font-sans">
-  <header class="hero text-center py-12">
+<body class="bg-white text-gray-900">
+  <!-- HERO -->
+  <header class="gradient text-white text-center py-16">
     <h1 class="text-5xl font-bold">CommunityInsight.AI</h1>
-    <p class="text-xl mt-3">Turning Community Voices into Action</p>
+    <p class="text-xl mt-4">Turning Community Voices into Action</p>
+    <a href="#videos" class="mt-6 inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded shadow hover:bg-blue-100 transition">🎥 Watch the Demo</a>
   </header>
 
-  <section class="section px-6 py-12 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-6 text-center">🎥 Watch Our Vision</h2>
-    <div class="grid gap-8 md:grid-cols-2">
-      <div class="card">
-        <iframe src="https://www.loom.com/embed/79e886790d3b431985933e5d9007684b?sid=85027e85-641b-4c86-ad01-d3ff3a0cfbf8" frameborder="0" allowfullscreen class="w-full h-64"></iframe>
+  <!-- VIDEO SECTION -->
+  <section id="videos" class="px-6 py-16 bg-gray-50" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-10">🎬 Watch Our Vision</h2>
+    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+      <div class="bg-white rounded shadow p-4">
+        <iframe src="https://www.loom.com/embed/79e886790d3b431985933e5d9007684b?sid=7383a737-b3d0-429a-9c33-f40093c85ae9" frameborder="0" allowfullscreen class="w-full h-64 rounded"></iframe>
       </div>
-      <div class="card">
-        <iframe src="https://www.loom.com/embed/8d3a1551d86b48a98d09c5e89873ef5b?sid=5115cd72-6474-4e53-a01f-24448b659f69" frameborder="0" allowfullscreen class="w-full h-64"></iframe>
+      <div class="bg-white rounded shadow p-4">
+        <iframe src="https://www.loom.com/embed/8d3a1551d86b48a98d09c5e89873ef5b?sid=543a810b-67e4-4c7c-a095-1c519ee7c157" frameborder="0" allowfullscreen class="w-full h-64 rounded"></iframe>
       </div>
     </div>
   </section>
 
-  <section class="px-6 py-12 bg-white max-w-4xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-4">💡 What is CommunityInsight.AI?</h2>
-    <p class="text-lg text-gray-700">A generative AI platform that transforms public feedback, surveys, and civic data into actionable insights. No data science degree required. Built for nonprofits, schools, and civic leaders.</p>
+  <!-- VALUE PROPOSITION -->
+  <section class="py-16 px-6 bg-white text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-6">What is CommunityInsight.AI?</h2>
+    <p class="text-lg max-w-3xl mx-auto text-gray-700">A generative AI platform that transforms public feedback, surveys, and civic data into insights that drive action. No data science required. Built for local orgs, school districts, and nonprofit teams.</p>
   </section>
 
-  <section class="section px-6 py-12 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-4">📎 View Our Pitch Deck</h2>
-    <a href="CommunityInsightAI_GenAI_PitchDeck.pdf" target="_blank" class="text-blue-600 underline text-lg">Download the PDF</a>
+  <!-- PROBLEM / SOLUTION -->
+  <section class="py-16 bg-gray-50 px-6" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">🚫 The Problem</h3>
+        <p class="text-gray-600">Local orgs are overwhelmed with raw data but lack the tools or capacity to interpret it — leading to missed funding and disengaged communities.</p>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">✅ Our Solution</h3>
+        <p class="text-gray-600">We turn civic data into clear, actionable insights using GPT-4-turbo, LangChain, Chroma, and multilingual embeddings.</p>
+      </div>
+    </div>
   </section>
 
-  <section class="px-6 py-12 bg-white max-w-4xl mx-auto">
-    <h2 class="text-3xl font-semibold mb-4">🌍 Why It Matters</h2>
-    <ul class="list-disc ml-6 space-y-2 text-gray-700">
-      <li><strong>Problem:</strong> Local orgs can’t interpret the data they already have.</li>
-      <li><strong>Solution:</strong> LLM-powered dashboards for anyone to use.</li>
-      <li><strong>Tech:</strong> GPT-4 + Chroma + LangChain + Hugging Face</li>
-      <li><strong>Ethics:</strong> Transparent. Public-only data. Multilingual support.</li>
+  <!-- TECH STACK -->
+  <section class="py-16 bg-white px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-8">🧠 How It Works</h2>
+    <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center">
+      <div class="bg-blue-50 rounded p-4 shadow">📥 Ingest Data<br><span class="text-sm">Socials, surveys, civic portals</span></div>
+      <div class="bg-green-50 rounded p-4 shadow">🧠 Embeddings<br><span class="text-sm">OpenAI / Hugging Face</span></div>
+      <div class="bg-yellow-50 rounded p-4 shadow">🔍 Vector DB<br><span class="text-sm">Chroma / Pinecone</span></div>
+      <div class="bg-purple-50 rounded p-4 shadow">💡 GPT-4-turbo<br><span class="text-sm">Insight generation via LangChain</span></div>
+    </div>
+  </section>
+
+  <!-- IMPACT SECTION -->
+  <section class="py-16 bg-gray-100 text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-6">🌍 Why It Matters</h2>
+    <ul class="text-lg max-w-3xl mx-auto text-gray-700 space-y-3">
+      <li><strong>Problem:</strong> Raw data overwhelms community orgs.</li>
+      <li><strong>Solution:</strong> AI-powered dashboards — no data science needed.</li>
+      <li><strong>Tech:</strong> GPT-4, Chroma, LangChain, Hugging Face</li>
+      <li><strong>Ethics:</strong> Public-only data. Transparent. Multilingual support.</li>
     </ul>
   </section>
 
-  <section class="section px-6 py-12 text-center">
-    <h2 class="text-3xl font-semibold mb-2">🚀 Ready to Pilot</h2>
-    <p class="text-lg mb-4 text-gray-700">We’re seeking GenAI incubation to refine our architecture, partner with civic groups, and launch pilots.</p>
-    <a href="mailto:your-email@domain.com" class="inline-block text-white bg-blue-600 px-6 py-3 rounded shadow hover:bg-blue-700">📬 Contact Us</a>
+  <!-- CTA TO PITCH DECK -->
+  <section class="py-12 px-6 bg-white text-center" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold mb-2">📎 Want More Details?</h2>
+    <a href="CommunityInsightAI_GenAI_PitchDeck.pdf" target="_blank" class="inline-block bg-blue-600 text-white font-medium px-6 py-3 mt-4 rounded shadow hover:bg-blue-700">Download Our Pitch Deck</a>
   </section>
 
-  <footer class="text-center text-sm text-gray-500 py-6 bg-gray-100">
+  <!-- FINAL CTA -->
+  <section class="py-16 px-6 text-center bg-gradient-to-r from-blue-600 to-blue-800 text-white" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">🚀 Ready to Collaborate?</h2>
+    <p class="text-lg mb-6">We’re looking for pilot partners and incubator support to scale civic impact with AI.</p>
+    <a href="mailto:your-email@domain.com" class="inline-block bg-white text-blue-800 font-semibold px-6 py-3 rounded shadow hover:bg-blue-100">📬 Contact Us</a>
+  </section>
+
+  <footer class="text-center text-sm text-gray-500 py-6 bg-gray-200">
     &copy; 2025 CommunityInsight.AI. All rights reserved.
   </footer>
+
+  <script>AOS.init();</script>
 </body>
 </html>
+
