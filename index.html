@@ -5,27 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CommunityInsight.AI</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
     }
-    .gradient {
-      background: linear-gradient(to right, #2563EB, #1E3A8A);
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+    }
+    .hero-bg {
+      background-image: url('https://images.unsplash.com/photo-1518593922146-58a67c86eeb5?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
 <body class="bg-white text-gray-900">
   <!-- HERO -->
-  <header class="gradient text-white text-center py-16">
-    <h1 class="text-5xl font-bold">CommunityInsight.AI</h1>
-    <p class="text-xl mt-4">Turning Community Voices into Action</p>
-    <a href="#videos" class="mt-6 inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded shadow hover:bg-blue-100 transition">🎥 Watch the Demo</a>
+  <header class="hero-bg text-white text-center py-24 relative">
+    <div class="overlay absolute inset-0 z-0"></div>
+    <div class="relative z-10">
+      <h1 class="text-5xl font-bold">CommunityInsight.AI</h1>
+      <p class="text-xl mt-4">Turning Community Voices into Action</p>
+      <a href="#videos" class="mt-6 inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded shadow hover:bg-blue-100 transition">🎥 Watch the Demo</a>
+    </div>
   </header>
 
   <!-- VIDEO SECTION -->
-  <section id="videos" class="px-6 py-16 bg-gray-50" data-aos="fade-up">
+  <section id="videos" class="px-6 py-20 bg-gray-50" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-10">🎬 Watch Our Vision</h2>
     <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
       <div class="bg-white rounded shadow p-4">
@@ -38,13 +50,13 @@
   </section>
 
   <!-- VALUE PROPOSITION -->
-  <section class="py-16 px-6 bg-white text-center" data-aos="fade-up">
+  <section class="py-20 px-6 bg-gradient-to-r from-slate-50 to-indigo-50 text-center" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-6">What is CommunityInsight.AI?</h2>
     <p class="text-lg max-w-3xl mx-auto text-gray-700">A generative AI platform that transforms public feedback, surveys, and civic data into insights that drive action. No data science required. Built for local orgs, school districts, and nonprofit teams.</p>
   </section>
 
   <!-- PROBLEM / SOLUTION -->
-  <section class="py-16 bg-gray-50 px-6" data-aos="fade-up">
+  <section class="py-20 bg-white px-6" data-aos="fade-up">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
       <div>
         <h3 class="text-2xl font-semibold mb-2">🚫 The Problem</h3>
@@ -58,18 +70,18 @@
   </section>
 
   <!-- TECH STACK -->
-  <section class="py-16 bg-white px-6" data-aos="fade-up">
+  <section class="py-20 bg-gradient-to-br from-sky-50 to-indigo-100 px-6" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-8">🧠 How It Works</h2>
     <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center">
-      <div class="bg-blue-50 rounded p-4 shadow">📥 Ingest Data<br><span class="text-sm">Socials, surveys, civic portals</span></div>
-      <div class="bg-green-50 rounded p-4 shadow">🧠 Embeddings<br><span class="text-sm">OpenAI / Hugging Face</span></div>
-      <div class="bg-yellow-50 rounded p-4 shadow">🔍 Vector DB<br><span class="text-sm">Chroma / Pinecone</span></div>
-      <div class="bg-purple-50 rounded p-4 shadow">💡 GPT-4-turbo<br><span class="text-sm">Insight generation via LangChain</span></div>
+      <div class="bg-white rounded-lg p-4 shadow-md">📥 <strong>Ingest</strong><br><span class="text-sm">Socials, surveys, civic portals</span></div>
+      <div class="bg-white rounded-lg p-4 shadow-md">🧠 <strong>Embed</strong><br><span class="text-sm">OpenAI / Hugging Face</span></div>
+      <div class="bg-white rounded-lg p-4 shadow-md">📊 <strong>Vector DB</strong><br><span class="text-sm">Chroma / Pinecone</span></div>
+      <div class="bg-white rounded-lg p-4 shadow-md">💡 <strong>LLM Insights</strong><br><span class="text-sm">LangChain, GPT-4-turbo</span></div>
     </div>
   </section>
 
   <!-- IMPACT SECTION -->
-  <section class="py-16 bg-gray-100 text-center" data-aos="fade-up">
+  <section class="py-20 bg-white text-center" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-6">🌍 Why It Matters</h2>
     <ul class="text-lg max-w-3xl mx-auto text-gray-700 space-y-3">
       <li><strong>Problem:</strong> Raw data overwhelms community orgs.</li>
@@ -80,23 +92,22 @@
   </section>
 
   <!-- CTA TO PITCH DECK -->
-  <section class="py-12 px-6 bg-white text-center" data-aos="fade-up">
+  <section class="py-16 px-6 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-center" data-aos="fade-up">
     <h2 class="text-2xl font-semibold mb-2">📎 Want More Details?</h2>
-    <a href="CommunityInsightAI_GenAI_PitchDeck.pdf" target="_blank" class="inline-block bg-blue-600 text-white font-medium px-6 py-3 mt-4 rounded shadow hover:bg-blue-700">Download Our Pitch Deck</a>
+    <a href="CommunityInsightAI_GenAI_PitchDeck.pdf" target="_blank" class="inline-block bg-white text-blue-800 font-medium px-6 py-3 mt-4 rounded shadow hover:bg-blue-100">Download Our Pitch Deck</a>
   </section>
 
   <!-- FINAL CTA -->
-  <section class="py-16 px-6 text-center bg-gradient-to-r from-blue-600 to-blue-800 text-white" data-aos="fade-up">
+  <section class="py-20 px-6 text-center bg-gray-800 text-white" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-4">🚀 Ready to Collaborate?</h2>
     <p class="text-lg mb-6">We’re looking for pilot partners and incubator support to scale civic impact with AI.</p>
-    <a href="mailto:your-email@domain.com" class="inline-block bg-white text-blue-800 font-semibold px-6 py-3 rounded shadow hover:bg-blue-100">📬 Contact Us</a>
+    <a href="mailto:your-email@domain.com" class="inline-block bg-green-500 text-white font-semibold px-6 py-3 rounded shadow hover:bg-green-600">📬 Contact Us</a>
   </section>
 
-  <footer class="text-center text-sm text-gray-500 py-6 bg-gray-200">
+  <footer class="text-center text-sm text-gray-500 py-6 bg-gray-100">
     &copy; 2025 CommunityInsight.AI. All rights reserved.
   </footer>
 
   <script>AOS.init();</script>
 </body>
 </html>
-
