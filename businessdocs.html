@@ -1,69 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CommunityInsights.AI</title>
   <style>
+    :root {
+      --peach: #ffe5b4;
+      --peach-dark: #ff7f50;
+      --soft-white: #fffdf8;
+      --text-dark: #2e2e2e;
+      --green: #4caf50;
+      --green-dark: #388e3c;
+      --font: 'Open Sans', sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: var(--font);
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
+      background-color: var(--soft-white);
+      color: var(--text-dark);
     }
+
     header {
-      background-color: #004080;
+      background: linear-gradient(120deg, var(--peach), var(--peach-dark));
       color: #fff;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
     nav {
-      background-color: #e9ecef;
+      background-color: #fef3e7;
       padding: 15px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 10px;
     }
+
     nav a {
-      margin: 10px;
-      padding: 10px 15px;
-      background-color: #007bff;
+      background-color: var(--peach-dark);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s;
     }
+
     nav a:hover {
-      background-color: #0056b3;
+      background-color: #ff6330;
     }
-    section {
+
+    .container {
+      max-width: 960px;
+      margin: auto;
       padding: 20px;
-      border-bottom: 1px solid #ccc;
     }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      color: var(--peach-dark);
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    section p {
+      margin-bottom: 1rem;
+    }
+
+    .download-link, .demo-link {
+      display: inline-block;
+      padding: 10px 16px;
+      background-color: var(--green);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .download-link:hover, .demo-link:hover {
+      background-color: var(--green-dark);
+    }
+
     iframe {
       width: 100%;
       max-width: 960px;
       height: 540px;
-      border: 1px solid #ccc;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
-    }
-    .download-link {
-      display: inline-block;
+      border: none;
       margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #28a745;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .download-link:hover {
-      background-color: #1e7e34;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>CommunityInsights.AI</h1>
@@ -88,14 +134,12 @@
       <a class="download-link" href="https://github.com/stanchat/communityinsight.ai/blob/main/CommunityInsightsAI-Lean-Canvas.pdf" target="_blank" rel="noopener noreferrer">Download Lean Canvas PDF</a>
     </section>
 
-
-
     <section id="features">
       <h2>CommunityInsight.AI Application Feature Specification Document</h2>
       <p>This document outlines the detailed features of the CommunityInsight.AI platform.</p>
-      <a class="download-link" href="https://github.com/stanchat/communityinsight.ai/blob/main/CommunityInsight_Features.md" target="_blank" rel="noopener noreferrer">Download CommunityInsights.AI feature spec</a>
+      <a class="download-link" href="https://github.com/stanchat/communityinsight.ai/blob/main/CommunityInsight_Features.md" target="_blank" rel="noopener noreferrer">Download CommunityInsights.AI Feature Spec</a>
     </section>
-    
+
     <section id="journey-maps">
       <h2>Customer Journey Maps</h2>
       <p>Detailed journeys for our six user personas to illustrate experience touchpoints and opportunities.</p>
@@ -109,13 +153,10 @@
     </section>
 
     <section id="demo-dashboard">
-    <h2>Demo Dashboard Mockup</h2>
-    <p>Interactive prototype showing how users explore insights in the CommunityInsights.AI platform.</p>
-    <a href="https://community-insight-demo-stanchatman.replit.app" target="_blank" rel="noopener noreferrer">
-      Visit Demo Dashboard
-    </a>
-  </section>
-
+      <h2>Demo Dashboard Mockup</h2>
+      <p>Interactive prototype showing how users explore insights in the CommunityInsights.AI platform.</p>
+      <a class="demo-link" href="https://community-insight-demo-stanchatman.replit.app" target="_blank" rel="noopener noreferrer">Visit Demo Dashboard</a>
+    </section>
 
     <section id="pitch-deck">
       <h2>Pitch Deck</h2>
@@ -126,13 +167,9 @@
     <section id="videos">
       <h2>Marketing Videos</h2>
       <p>Short Loom videos introducing CommunityInsights.AI and showing the value to early adopters.</p>
-      <div>
-        <iframe src="https://www.loom.com/embed/79e886790d3b431985933e5d9007684b?sid=85027e85-641b-4c86-ad01-d3ff3a0cfbf8" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <br>
-      <div>
-        <iframe src="https://www.loom.com/embed/8d3a1551d86b48a98d09c5e89873ef5b?sid=5115cd72-6474-4e53-a01f-24448b659f69" frameborder="0" allowfullscreen></iframe>
-      </div>
+      <iframe src="https://www.loom.com/embed/79e886790d3b431985933e5d9007684b?sid=85027e85-641b-4c86-ad01-d3ff3a0cfbf8" allowfullscreen></iframe>
+      <br><br>
+      <iframe src="https://www.loom.com/embed/8d3a1551d86b48a98d09c5e89873ef5b?sid=5115cd72-6474-4e53-a01f-24448b659f69" allowfullscreen></iframe>
     </section>
 
   </main>
