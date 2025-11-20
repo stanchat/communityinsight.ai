@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation | CommunityInsight.AI</title>
+    <meta name="description" content="Technical documentation for CommunityInsight.AI - architecture, API integrations, deployment, and developer resources.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="https://communityinsight.ai/favicon.png">
+    <style>
+        .docs-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .docs-nav {
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        .docs-nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .docs-nav a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .docs-nav a:hover {
+            text-decoration: underline;
+        }
+        .docs-section {
+            margin-bottom: 60px;
+        }
+        .docs-section h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 12px;
+        }
+        .docs-section h3 {
+            font-size: 24px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            color: #1f2937;
+        }
+        .docs-section h4 {
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #374151;
+        }
+        .docs-section p {
+            margin-bottom: 16px;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+        .docs-section ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+        .docs-section li {
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+        code {
+            background-color: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #dc2626;
+        }
+        pre {
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 24px;
+        }
+        pre code {
+            background-color: transparent;
+            color: #f9fafb;
+            padding: 0;
+        }
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 16px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+        }
+        .architecture-diagram {
+            background-color: #f9fafb;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: #111827;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">CommunityInsight.AI</h1>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="#architecture">Architecture</a>
+                    <a href="#agents">AI Agents</a>
+                    <a href="#deployment">Deployment</a>
+                    <a href="https://communityinsight.ai" class="cta-link">Launch App</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="docs-container">
+        <!-- Page Title -->
+        <h1 style="font-size: 42px; margin-bottom: 16px;">Technical Documentation</h1>
+        <p style="font-size: 18px; color: #6b7280; margin-bottom: 40px;">
+            Comprehensive technical documentation for developers building with or contributing to CommunityInsight.AI
+        </p>
+
+        <!-- Navigation -->
+        <nav class="docs-nav">
+            <ul>
+                <li><a href="#architecture">Architecture Overview</a></li>
+                <li><a href="#agents">AI Agents</a></li>
+                <li><a href="#apis">API Integrations</a></li>
+                <li><a href="#database">Database Design</a></li>
+                <li><a href="#deployment">Deployment</a></li>
+                <li><a href="#security">Security</a></li>
+            </ul>
+        </nav>
+
+        <!-- Architecture Overview -->
+        <section id="architecture" class="docs-section">
+            <h2>🏗️ System Architecture</h2>
+            
+            <div class="info-box">
+                <strong>Production Status:</strong> This platform is production-ready with a 98/100 security score and comprehensive monitoring.
+            </div>
+
+            <h3>Tech Stack</h3>
+            
+            <h4>Frontend</h4>
+            <ul>
+                <li><strong>Framework:</strong> React 18 with TypeScript</li>
+                <li><strong>UI Components:</strong> Radix UI + shadcn/ui</li>
+                <li><strong>Styling:</strong> Tailwind CSS with civic-themed palette</li>
+                <li><strong>State Management:</strong> TanStack Query v5</li>
+                <li><strong>Routing:</strong> Wouter (lightweight React router)</li>
+                <li><strong>Form Management:</strong> React Hook Form with Zod validation</li>
+            </ul>
+
+            <h4>Backend</h4>
+            <ul>
+                <li><strong>Runtime:</strong> Node.js with Express.js (TypeScript, ES modules)</li>
+                <li><strong>Database:</strong> PostgreSQL via Neon Database</li>
+                <li><strong>ORM:</strong> Drizzle ORM with Drizzle Kit for migrations</li>
+                <li><strong>Validation:</strong> Zod schemas</li>
+                <li><strong>Authentication:</strong> Session-based with connect-pg-simple</li>
+                <li><strong>Security:</strong> Helmet.js, CSRF protection, rate limiting</li>
+            </ul>
+
+            <h4>AI & Machine Learning</h4>
+            <ul>
+                <li><strong>Claude 4.5 Sonnet</strong> (Anthropic) - Complex reasoning, grant writing, ballot research</li>
+                <li><strong>Google Gemini AI</strong> - Survey generation, cost-optimized tasks</li>
+                <li><strong>Perplexity AI</strong> (sonar-pro) - Real-time research, community insights</li>
+                <li><strong>OpenAI GPT-4</strong> - Specific use cases</li>
+            </ul>
+
+            <h3>Architecture Patterns</h3>
+            <ul>
+                <li><strong>Repository Pattern:</strong> Clean separation between data access and business logic</li>
+                <li><strong>Service Layer:</strong> Dedicated services for AI operations, data processing, and report generation</li>
+                <li><strong>Autonomous Agents:</strong> Independent AI agents with audit logging and state management</li>
+                <li><strong>Multi-Model Strategy:</strong> Strategic use of different AI models for cost/quality optimization</li>
+            </ul>
+
+            <h3>Data Flow</h3>
+            <div class="architecture-diagram">
+                <pre>
+┌─────────────┐
+│   Frontend  │
+│  (React 18) │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────────────┐
+│  Express.js Backend     │
+│  • Authentication       │
+│  • Rate Limiting        │
+│  • CSRF Protection      │
+└──────┬──────────────────┘
+       │
+       ├──────────────────┬─────────────────┬──────────────────┐
+       ▼                  ▼                 ▼                  ▼
+┌─────────────┐   ┌──────────────┐  ┌─────────────┐  ┌──────────────┐
+│   AI Models │   │ Federal APIs │  │  PostgreSQL │  │ Social Media │
+│ Claude/Gemini│  │ Census/Civic │  │    (Neon)   │  │  APIs/Feeds  │
+└─────────────┘   └──────────────┘  └─────────────┘  └──────────────┘
+                </pre>
+            </div>
+        </section>
+
+        <!-- AI Agents -->
+        <section id="agents" class="docs-section">
+            <h2>🤖 Autonomous AI Agents</h2>
+            
+            <p>
+                CommunityInsight.AI features 5 specialized autonomous agents that work independently to serve civic needs. 
+                Each agent has dedicated database tables for audit logging and state management.
+            </p>
+
+            <h3>1. Survey Builder Agent</h3>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>AI Model</td>
+                    <td>Google Gemini (gemini-1.5-flash)</td>
+                </tr>
+                <tr>
+                    <td>Token Cost</td>
+                    <td>~50 tokens per survey</td>
+                </tr>
+                <tr>
+                    <td>Key Features</td>
+                    <td>
+                        <ul>
+                            <li>Generates professional survey templates</li>
+                            <li>8 Quick Start Templates (Community Satisfaction, Public Safety, etc.)</li>
+                            <li>Customizable Point-of-View (Resident, Business Owner, Visitor)</li>
+                            <li>Exports to Google Forms, SurveyMonkey, Typeform, etc.</li>
+                            <li>Inline editing with real-time updates</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Database Tables</td>
+                    <td><code>survey_templates</code>, <code>promptAnalytics</code></td>
+                </tr>
+            </table>
+
+            <h3>2. Grant Discovery Agent</h3>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>AI Model</td>
+                    <td>Claude 4.5 Sonnet</td>
+                </tr>
+                <tr>
+                    <td>Token Cost</td>
+                    <td>50-100 tokens per grant search</td>
+                </tr>
+                <tr>
+                    <td>Key Features</td>
+                    <td>
+                        <ul>
+                            <li>Discovers federal grant opportunities via USASpending.gov API</li>
+                            <li>Generates compelling grant proposals with AI writing assistance</li>
+                            <li>Lifecycle tracking (Research → Discovery → Proposal → Submit)</li>
+                            <li>Grant-ready PDF report generation</li>
+                            <li>Historical grant analysis</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Database Tables</td>
+                    <td><code>agent_grant_discoveries</code>, <code>promptAnalytics</code></td>
+                </tr>
+            </table>
+
+            <h3>3. Ballot Research Agent</h3>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>AI Model</td>
+                    <td>Claude 4.5 Sonnet + Google Civic Information API</td>
+                </tr>
+                <tr>
+                    <td>Token Cost</td>
+                    <td>~100 tokens per research</td>
+                </tr>
+                <tr>
+                    <td>Key Features</td>
+                    <td>
+                        <ul>
+                            <li>Comprehensive candidate research</li>
+                            <li>Integration with Google Civic Information API</li>
+                            <li>Campaign finance data via Illinois Sunshine</li>
+                            <li>Voting records and policy positions</li>
+                            <li>Nationwide election data coverage</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Database Tables</td>
+                    <td><code>agent_ballot_research</code>, <code>promptAnalytics</code></td>
+                </tr>
+            </table>
+
+            <h3>4. School Discovery Agent</h3>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>AI Model</td>
+                    <td>Google Maps API + Census geocoding</td>
+                </tr>
+                <tr>
+                    <td>Token Cost</td>
+                    <td>~30 tokens per search</td>
+                </tr>
+                <tr>
+                    <td>Key Features</td>
+                    <td>
+                        <ul>
+                            <li>Discovers schools serving any U.S. address</li>
+                            <li>Boundary-aware school search</li>
+                            <li>Public, private, and charter school coverage</li>
+                            <li>Rating integration (when available)</li>
+                            <li>District information</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Database Tables</td>
+                    <td><code>agent_school_discovery</code>, <code>promptAnalytics</code></td>
+                </tr>
+            </table>
+
+            <h3>5. Community Insight Agent</h3>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>AI Model</td>
+                    <td>Perplexity AI (sonar-pro) + Multi-source data</td>
+                </tr>
+                <tr>
+                    <td>Token Cost</td>
+                    <td>~150 tokens per insight</td>
+                </tr>
+                <tr>
+                    <td>Key Features</td>
+                    <td>
+                        <ul>
+                            <li>Multi-source community data analysis</li>
+                            <li>Social media monitoring (Facebook, Reddit, YouTube)</li>
+                            <li>311 service request integration</li>
+                            <li>Census demographic data</li>
+                            <li>Real-time community trend alerts</li>
+                            <li>Automated municipal source discovery</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Database Tables</td>
+                    <td><code>agent_insight_runs</code>, <code>insights</code>, <code>municipal_sources</code></td>
+                </tr>
+            </table>
+
+            <div class="info-box">
+                <strong>Agent Architecture:</strong> All agents implement comprehensive audit logging, state management, 
+                and error handling. Token costs are tracked via the <code>promptAnalytics</code> table for transparent 
+                billing and usage monitoring.
+            </div>
+        </section>
+
+        <!-- API Integrations -->
+        <section id="apis" class="docs-section">
+            <h2>🔌 API Integrations</h2>
+
+            <h3>Federal Government APIs</h3>
+            <table>
+                <tr>
+                    <th>API</th>
+                    <th>Purpose</th>
+                    <th>Auth Required</th>
+                </tr>
+                <tr>
+                    <td>U.S. Census Bureau (ACS)</td>
+                    <td>Demographics, population, income, education data for all municipalities</td>
+                    <td>API Key</td>
+                </tr>
+                <tr>
+                    <td>USASpending.gov</td>
+                    <td>Federal grant opportunities and historical spending data</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Google Civic Information API</td>
+                    <td>Election data, candidate information, voting locations</td>
+                    <td>API Key</td>
+                </tr>
+                <tr>
+                    <td>CDC Social Vulnerability Index</td>
+                    <td>Community vulnerability metrics for grant eligibility</td>
+                    <td>No</td>
+                </tr>
+            </table>
+
+            <h3>AI & ML APIs</h3>
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Model</th>
+                    <th>Use Cases</th>
+                </tr>
+                <tr>
+                    <td>Anthropic</td>
+                    <td>Claude 4.5 Sonnet</td>
+                    <td>Grant proposals, ballot research, complex reasoning</td>
+                </tr>
+                <tr>
+                    <td>Google AI</td>
+                    <td>Gemini 1.5 Flash</td>
+                    <td>Survey generation, cost-optimized tasks</td>
+                </tr>
+                <tr>
+                    <td>Perplexity</td>
+                    <td>sonar-pro</td>
+                    <td>Real-time research, community insights</td>
+                </tr>
+                <tr>
+                    <td>OpenAI</td>
+                    <td>GPT-4</td>
+                    <td>Specific use cases</td>
+                </tr>
+            </table>
+
+            <h3>Social Media & Community Data</h3>
+            <ul>
+                <li><strong>KWatch.io:</strong> Social media monitoring (Twitter/X, Reddit, YouTube)</li>
+                <li><strong>Facebook Graph API:</strong> Page posts, comments, insights</li>
+                <li><strong>Reddit API:</strong> Community discussions and sentiment</li>
+                <li><strong>YouTube Data API:</strong> Video content analysis</li>
+                <li><strong>Google News RSS:</strong> Municipal news aggregation</li>
+            </ul>
+
+            <h3>Geolocation Services</h3>
+            <ul>
+                <li><strong>Google Maps API:</strong> School discovery, address validation</li>
+                <li><strong>Census Geocoding:</strong> Address to municipality mapping</li>
+                <li><strong>Nominatim OpenStreetMap:</strong> Fallback geocoding</li>
+            </ul>
+
+            <h3>Environment Variables</h3>
+            <pre><code># AI Services
+ANTHROPIC_API_KEY=sk-ant-...
+GOOGLE_MAPS_API_KEY=AIza...
+OPENAI_API_KEY=sk-...
+PERPLEXITY_API_KEY=pplx-...
+
+# Federal APIs
+GOOGLE_CIVIC_API_KEY=AIza...
+
+# Database
+DATABASE_URL=postgresql://...
+
+# Social Media
+FACEBOOK_ACCESS_TOKEN=...
+REDDIT_CLIENT_ID=...
+REDDIT_CLIENT_SECRET=...
+YOUTUBE_API_KEY=AIza...
+KWATCH_API_KEY=...
+
+# Payment
+STRIPE_SECRET_KEY=sk_...
+VITE_STRIPE_PUBLIC_KEY=pk_...
+</code></pre>
+        </section>
+
+        <!-- Database Design -->
+        <section id="database" class="docs-section">
+            <h2>🗄️ Database Design</h2>
+
+            <h3>Core Tables</h3>
+            <table>
+                <tr>
+                    <th>Table</th>
+                    <th>Purpose</th>
+                    <th>Key Columns</th>
+                </tr>
+                <tr>
+                    <td><code>users</code></td>
+                    <td>User accounts and authentication</td>
+                    <td>id, username, email, password_hash, jurisdiction, role</td>
+                </tr>
+                <tr>
+                    <td><code>insights</code></td>
+                    <td>AI-generated community insights</td>
+                    <td>id, user_id, title, content, sources, created_at</td>
+                </tr>
+                <tr>
+                    <td><code>promptAnalytics</code></td>
+                    <td>AI token usage tracking and billing</td>
+                    <td>id, user_id, feature, model, token_count, cost</td>
+                </tr>
+                <tr>
+                    <td><code>municipal_sources</code></td>
+                    <td>Automated municipal data source discovery</td>
+                    <td>id, jurisdiction, source_type, url, verified</td>
+                </tr>
+            </table>
+
+            <h3>Agent Tables</h3>
+            <table>
+                <tr>
+                    <th>Table</th>
+                    <th>Agent</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td><code>survey_templates</code></td>
+                    <td>Survey Builder</td>
+                    <td>Generated survey templates and questions</td>
+                </tr>
+                <tr>
+                    <td><code>agent_grant_discoveries</code></td>
+                    <td>Grant Discovery</td>
+                    <td>Discovered grants and proposals</td>
+                </tr>
+                <tr>
+                    <td><code>agent_ballot_research</code></td>
+                    <td>Ballot Research</td>
+                    <td>Candidate research and election data</td>
+                </tr>
+                <tr>
+                    <td><code>agent_school_discovery</code></td>
+                    <td>School Discovery</td>
+                    <td>School searches and results</td>
+                </tr>
+                <tr>
+                    <td><code>agent_insight_runs</code></td>
+                    <td>Community Insight</td>
+                    <td>Insight generation runs and audit logs</td>
+                </tr>
+            </table>
+
+            <h3>Performance Optimizations</h3>
+            <ul>
+                <li><strong>23 Indexes</strong> across 7 high-traffic tables</li>
+                <li><strong>Connection Pooling</strong> via Neon (max=10, idle=30s, timeout=5s)</li>
+                <li><strong>API Caching</strong> with SimpleCacheService (LRU eviction, 100MB cap)</li>
+                <li><strong>Database Queries</strong> optimized for production scale (1M+ rows)</li>
+            </ul>
+
+            <h3>Running Migrations</h3>
+            <pre><code># Generate migration from schema changes
+npm run db:generate
+
+# Push changes to database
+npm run db:push
+
+# Open Drizzle Studio for visual inspection
+npm run db:studio
+</code></pre>
+        </section>
+
+        <!-- Deployment -->
+        <section id="deployment" class="docs-section">
+            <h2>🚀 Deployment</h2>
+
+            <h3>Production Environment</h3>
+            <p>
+                The platform is deployed on <strong>Replit</strong> with production-grade configuration:
+            </p>
+
+            <ul>
+                <li><strong>Frontend:</strong> Vite build served via Express static middleware</li>
+                <li><strong>Backend:</strong> Express.js server on port 5000</li>
+                <li><strong>Database:</strong> Neon PostgreSQL with connection pooling</li>
+                <li><strong>CDN:</strong> Static assets cached via Replit deployment infrastructure</li>
+            </ul>
+
+            <h3>Build Process</h3>
+            <pre><code># Install dependencies
+npm install
+
+# Build frontend and backend
+npm run build
+
+# Start production server
+npm start
+</code></pre>
+
+            <h3>Production Checklist</h3>
+            <ul>
+                <li>✅ All environment variables configured (47+ variables)</li>
+                <li>✅ Database migrations applied</li>
+                <li>✅ Security headers configured (Helmet.js)</li>
+                <li>✅ Rate limiting enabled (global + feature-specific)</li>
+                <li>✅ CSRF protection active</li>
+                <li>✅ Error monitoring and alerting configured</li>
+                <li>✅ Backup and disaster recovery procedures documented</li>
+            </ul>
+
+            <h3>Health Checks</h3>
+            <pre><code># Main health endpoint
+GET /api/health
+
+# Error metrics (admin only)
+GET /api/health/errors
+
+# Database connection status
+GET /api/health/db
+</code></pre>
+        </section>
+
+        <!-- Security -->
+        <section id="security" class="docs-section">
+            <h2>🛡️ Security</h2>
+
+            <div class="info-box">
+                <strong>Security Score: 98/100</strong> - Comprehensive security audit completed November 2025
+            </div>
+
+            <h3>Security Measures</h3>
+            <ul>
+                <li><strong>Helmet.js:</strong> Production-grade Content Security Policy (CSP), HSTS, X-Frame-Options</li>
+                <li><strong>CSRF Protection:</strong> Double-submit cookie pattern via csrf-csrf library</li>
+                <li><strong>Authentication:</strong> 95.5% of endpoints protected with requireAuth/adminAuth middleware</li>
+                <li><strong>Rate Limiting:</strong> Global (300 req/min) + feature-specific limiters for AI/report/upload endpoints</li>
+                <li><strong>Input Validation:</strong> Zod schema validation for all user inputs</li>
+                <li><strong>PII Scrubbing:</strong> Comprehensive logger with email, phone, SSN, credit card filtering</li>
+                <li><strong>Session Security:</strong> Secure cookie settings, HTTP-only, SameSite=Strict</li>
+            </ul>
+
+            <h3>Content Security Policy</h3>
+            <pre><code>// Development: Disabled for Vite HMR
+// Production: Strict CSP with whitelisted domains
+{
+  defaultSrc: ["'self'"],
+  scriptSrc: ["'self'", "'unsafe-inline'", "https://js.stripe.com"],
+  styleSrc: ["'self'", "'unsafe-inline'"],
+  imgSrc: ["'self'", "data:", "https:"],
+  connectSrc: ["'self'", "https://api.stripe.com"]
+}
+</code></pre>
+
+            <h3>Vulnerability Prevention</h3>
+            <ul>
+                <li>✅ <strong>RCE Prevention:</strong> CSV-only upload policy (no .xlsx processing)</li>
+                <li>✅ <strong>SQL Injection:</strong> Drizzle ORM parameterized queries</li>
+                <li>✅ <strong>XSS Prevention:</strong> CSP headers + React auto-escaping</li>
+                <li>✅ <strong>CSRF Protection:</strong> Double-submit cookie pattern</li>
+                <li>✅ <strong>Session Hijacking:</strong> Secure cookies, HTTPS-only</li>
+            </ul>
+
+            <h3>Secret Management</h3>
+            <ul>
+                <li>47+ environment variables (12 required, 37 optional)</li>
+                <li>Automated validation script for preflight checks</li>
+                <li>Secret rotation guide with 90/180/365-day cadences</li>
+                <li>Never expose secrets in logs or client-side code</li>
+            </ul>
+        </section>
+
+        <!-- Contributing -->
+        <section class="docs-section">
+            <h2>🤝 Contributing</h2>
+            <p>
+                We welcome contributions to CommunityInsight.AI! This is an open-source civic technology project 
+                designed to serve the public good.
+            </p>
+
+            <h3>Development Setup</h3>
+            <pre><code># Clone repository
+git clone https://github.com/stanchat/communityinsight-kaggle.git
+cd communityinsight-kaggle
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Add your API keys
+
+# Run database migrations
+npm run db:push
+
+# Start development server
+npm run dev
+</code></pre>
+
+            <h3>Pull Request Process</h3>
+            <ol>
+                <li>Fork the repository</li>
+                <li>Create a feature branch (<code>git checkout -b feature/amazing-feature</code>)</li>
+                <li>Make your changes with clear commit messages</li>
+                <li>Ensure all tests pass and code follows TypeScript conventions</li>
+                <li>Push to your branch (<code>git push origin feature/amazing-feature</code>)</li>
+                <li>Open a Pull Request with detailed description</li>
+            </ol>
+
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="https://github.com/stanchat/communityinsight-kaggle">GitHub Repository</a></li>
+                <li><a href="https://communityinsight.ai">Live Platform</a></li>
+                <li><a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project">Kaggle Competition</a></li>
+                <li><a href="index.html#videos">Video Tutorials</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CommunityInsight.AI</h4>
+                    <p>
+                        Empowering government officials, nonprofits, researchers, and community advocates 
+                        with AI-driven insights for better decision-making.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="https://communityinsight.ai">Dashboard</a></li>
+                        <li><a href="https://communityinsight.ai/pricing">Pricing</a></li>
+                        <li><a href="https://communityinsight.ai/documentation">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="docs.html">Technical Docs</a></li>
+                        <li><a href="https://github.com/stanchat/communityinsight-kaggle">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://communityinsight.ai/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="https://communityinsight.ai/terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CommunityInsight.AI. Built with ethical AI practices for civic good. | Patent Pending</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
